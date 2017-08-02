@@ -17,6 +17,7 @@
     "semicolon": ["never"],
     "quotemark": [true, "single", "avoid-escape"],
     "max-classes-per-file": [true, 2],
-    "eofline": true
+    "eofline": true,
+    "indent": [true, "spaces", 2]
   }
 }

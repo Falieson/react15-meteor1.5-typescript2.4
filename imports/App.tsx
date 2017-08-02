@@ -1,9 +1,11 @@
 import * as React from 'react';
 import Counter from './counter/CounterComponent'
 
-const App = (
+const App: React.ReactElement<{}> = (
   <div className='app-container'>
-    <Counter />
+    <Counter
+      defaultValue={100}
+    />
   </div>
 )
 export default App

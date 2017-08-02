@@ -1,38 +1,67 @@
 import * as React from 'react'
 
-class CounterModule extends React.Component<{}, {}> {
+interface IProps {
+    defaultValue: number
+}
+
+interface IState {
+    value: number
+}
+
+export default class CounterComponent extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      value: this.props.defaultValue,
+    };
+  }
+
+  public handleChangeValue(decrement: boolean): void {
+    this.setState((prevState) => ({
+      value: decrement ? prevState.value - 1 : prevState.value + 1,
+    }))
+  }
+
+  // TODO @autobind from core-decorators instead of .bind(this)
+  public renderChangeValue({
+    decrement= false,
+  }: {decrement?: boolean}= {}): React.ReactElement<{}> {
+
+    return (
+      <button onClick={this.handleChangeValue.bind(this, decrement)}>
+        {decrement ? 'Decrease' : 'Increase'}
+      </button>
+    )
+  }
+
   public render() {
     return (
       <div>
-        Counter Module Placeholder
+        <p>Count is {this.state.value}</p>
+        <p>
+          {this.renderChangeValue()}
+          {this.renderChangeValue({decrement: true})}
+        </p>
       </div>
-    )
+    );
   }
 }
 
-export default CounterModule
-
-// =================
-// https://charleslbryant.gitbooks.io/hello-react-and-typescript/content/TypeScriptAndReact.html
-// interface IMyComponentProps {
-//     someDefaultValue: string
-// }
+// According to some github issue discussions rather than .bind(this) make a PureComponent
+// ======================================================
+// class Button extends React.PureComponent<{onClick: void}> {
+//   public render() {
+//     const { onClick } = this.props;
 //
-// interface IMyComponentState {
-//     someValue: string
-// }
+//     // console.log('render button');
 //
-// export default class MyComponent extends React.Component<IMyComponentProps, IMyComponentState> {
-//     constructor(props: IMyComponentProps) {
-//         super(props);
-//         this.state = { someValue: this.props.someDefaultValue };
-//     }
-
-//     public render() {
-//         return (
-//             <div>
-//                 Value set as {this.state.someValue}
-//             </div>
-//         );
-//     }
+//     return (
+//       <button onClick={onClick}>Click</button>
+//     );
+//   }
 // }
+// return (
+//   <Button
+//     onClick={this.handleChangeValue(decrement)}
+//   />
+// )

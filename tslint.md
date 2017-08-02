@@ -45,3 +45,5 @@
 ### "max-classes-per-file": [true, 2]
 
 ### "eofline": true
+
+### "indent": [true, "spaces", 2]
