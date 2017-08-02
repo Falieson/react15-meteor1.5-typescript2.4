@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from "react"
 
 export default function Root(initStore, renderRoutes, children) {
   // if(renderRoutes){
@@ -10,7 +10,7 @@ export default function Root(initStore, renderRoutes, children) {
   //     </div>
   //   );
   // }
-  if(children && !initStore){
+  if (children && !initStore){
     return (
       <div className="root-container">
         {children}
