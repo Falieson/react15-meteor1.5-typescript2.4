@@ -5,7 +5,6 @@
     "tslint-react"
   ],
   "rules": {
-    // TypeScript rules
     "restrict-plus-operands": true,
     "strict-boolean-expressions": true,
     "switch-default": true,
@@ -14,16 +13,10 @@
     "no-any": true,
     "no-empty-interface": true,
     "no-import-side-effect": true,
-
-    // general rules
-    // "file-header": [true, "Copyright \\d{4} Flex"],
-
-    // react rules
     "jsx-wrap-multiline": false,
-
-    // style rules
     "semicolon": ["never"],
     "quotemark": [true, "single", "avoid-escape"],
-    "max-classes-per-file": [true, 2]
+    "max-classes-per-file": [true, 2],
+    "eofline": true
   }
 }
