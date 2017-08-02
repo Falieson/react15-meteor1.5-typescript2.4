@@ -2,8 +2,20 @@
   "name": "react-meteor-example",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "lint:client": "tslint --fix -c ./tslint.json './client/**/*.{ts,tsx}'",
+    "lint:imports": "tslint --fix -c ./tslint.json './imports/**/*.{ts,tsx}'",
+    "lint:server": "tslint --fix -c ./tslint.json './server/**/*.ts'",
+    "lint": "npm run lint:client && npm run lint:server && npm run lint:imports",
+    "type:server": "tslint -p ./tsconfig.json --type-check './server/**/*.ts'",
+    "type:client": "tslint -p ./tsconfig.json --type-check './client/**/*.ts'",
+    "type:imports": "tslint -p ./tsconfig.json --type-check './imports/**/*.ts'",
+    "type": "npm run type:client && npm run type:server && npm run type:imports"    
   },
+  "pre-commit": [
+    "lint",
+    "type"
+  ],
   "dependencies": {
     "@types/meteor": "^1.4.2",
     "@types/react": "^15.6.0",
@@ -12,5 +24,9 @@
     "react": "^15.6.1",
     "react-addons-pure-render-mixin": "^15.6.0",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
   }
 }
