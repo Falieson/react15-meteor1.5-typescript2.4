@@ -10,12 +10,9 @@
     "type:server": "tslint -p ./tsconfig.json --type-check './server/**/*.ts'",
     "type:client": "tslint -p ./tsconfig.json --type-check './client/**/*.ts'",
     "type:imports": "tslint -p ./tsconfig.json --type-check './imports/**/*.ts'",
-    "type": "npm run type:client && npm run type:server && npm run type:imports"
+    "type": "npm run type:client && npm run type:server && npm run type:imports",
+    "precommit": "npm run lint && npm run type"
   },
-  "pre-commit": [
-    "lint",
-    "type"
-  ],
   "dependencies": {
     "@types/meteor": "^1.4.2",
     "@types/react": "^15.6.0",
@@ -26,6 +23,7 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "meteor-husky": "^0.14.6",
     "tslint": "^5.5.0",
     "tslint-react": "^3.1.0",
     "typescript": "^2.4.2"
