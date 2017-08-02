@@ -23,7 +23,7 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "meteor-husky": "^0.14.6",
+    "husky": "^0.14.3",
     "tslint": "^5.5.0",
     "tslint-react": "^3.1.0",
     "typescript": "^2.4.2"
