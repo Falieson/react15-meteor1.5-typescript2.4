@@ -1,11 +1,11 @@
 import * as React from 'react'
 
 interface IProps {
-    defaultValue: number
+  defaultValue: number
 }
 
 interface IState {
-    value: number
+  value: number
 }
 
 export default class CounterComponent extends React.Component<IProps, IState> {
@@ -25,7 +25,7 @@ export default class CounterComponent extends React.Component<IProps, IState> {
   // TODO @autobind from core-decorators instead of .bind(this)
   public renderChangeValue({
     decrement= false,
-  }: {decrement?: boolean}= {}): React.ReactElement<{}> {
+  }: {decrement?: boolean} = {}): React.ReactElement<{}> {
 
     return (
       <button onClick={this.handleChangeValue.bind(this, decrement)}>
