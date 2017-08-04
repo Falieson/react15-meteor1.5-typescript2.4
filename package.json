@@ -15,23 +15,30 @@
     "type:client": "tslint -p ./tsconfig.json --type-check './client/**/*.{ts,tsx}'",
     "type:server": "tslint -p ./tsconfig.json --type-check './server/**/*.ts'",
     "type": "npm run type:client && npm run type:server && npm run type:imports",
-    "precommit": "npm run lint && npm run type && npm run test"
+    "precommit": "npm run lint && npm run type && npm run test",
+    "packages:reset": "rm-local-modules -v && npm install 0-ui 0-lib",
+    "preinstall": "npm run packages:reset"
   },
   "dependencies": {
+    "0-lib": "file:./packages/0-lib",
+    "0-ui": "file:./packages/0-ui",
     "babel-runtime": "^6.20.0",
     "meteor-node-stubs": "~0.2.4",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-router-dom": "4.1.2"
   },
   "devDependencies": {
     "@types/jest": "20.0.6",
     "@types/meteor": "^1.4.2",
     "@types/react": "^15.6.0",
     "@types/react-dom": "^15.5.1",
+    "@types/react-router-dom": "4.0.7",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "jest": "20.0.4",
     "meteor-husky": "^0.14.6",
+    "rm-local-modules": "0.0.0",
     "ts-jest": "20.0.9",
     "tslint": "^5.5.0",
     "tslint-react": "^3.1.0",

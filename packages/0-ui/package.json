@@ -1,0 +1,15 @@
+{
+  "name": "0-ui",
+  "description": "Sustainable interface for swapping out equivalent packages for a long lifed project",
+  "version": "0.1.0",
+  "author": "Florian Mettetal <florianmettetal.developer@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Falieson/react15-meteor1.5-typescript2.4"
+  },
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm run test"
+  }
+}

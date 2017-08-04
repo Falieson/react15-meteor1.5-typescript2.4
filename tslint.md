@@ -28,6 +28,8 @@
 
 #### "no-import-side-effect": true
 
+#### "no-unused-variable": true
+
 ## GENERAL
 
 ### "file-header": [true, "Copyright \\d{4} CompanyName"]
@@ -36,7 +38,11 @@
 
 ## "jsx-wrap-multiline": false
 
+## "jsx-boolean-value": "never"
+
 ## STYLE
+
+### "arrow-parens": [true, "ban-single-arg-parens"]
 
 ### "semicolon": ["never"]
 

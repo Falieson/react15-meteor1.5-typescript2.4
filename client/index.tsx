@@ -18,5 +18,5 @@ import AppRoot from './Root'
 
 Meteor.startup(() => {
   // injectTapEventPlugin(); // Required for Material IconMenu (v.0.15.0)
-  render(AppRoot(undefined, undefined, App), document.getElementById('root'));
+  render(AppRoot({children: App}), document.getElementById('root'));
 });

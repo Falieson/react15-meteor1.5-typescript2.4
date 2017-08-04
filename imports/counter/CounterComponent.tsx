@@ -17,7 +17,7 @@ export default class CounterComponent extends React.Component<IProps, IState> {
   }
 
   public handleChangeValue(decrement: boolean): void {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       value: decrement ? prevState.value - 1 : prevState.value + 1,
     }))
   }

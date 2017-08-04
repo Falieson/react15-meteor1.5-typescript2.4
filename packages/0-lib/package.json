@@ -1,0 +1,15 @@
+{
+  "name": "0-lib",
+  "description": "Library of internal and remixed 3rd-party components",
+  "version": "0.1.0",
+  "author": "Florian Mettetal <florianmettetal.developer@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Falieson/react15-meteor1.5-typescript2.4"
+  },
+  "license": "MIT",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm run test"
+  }
+}
