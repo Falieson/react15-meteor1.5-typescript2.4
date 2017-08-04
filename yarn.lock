@@ -51,6 +51,10 @@
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@types/meteor/-/meteor-1.4.2.tgz#a31381b6dad0fb6b6d60336c1582aeedb6352725"
 
+"@types/node@^8.0.19":
+  version "8.0.19"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.19.tgz#e46e2b0243de7d03f15b26b45c59ebb84f657a4e"
+
 "@types/react-dom@^15.5.1":
   version "15.5.1"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.1.tgz#f3c3e14c682785923c7d64583537df319442dec1"

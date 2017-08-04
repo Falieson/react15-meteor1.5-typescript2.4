@@ -1,0 +1,1 @@
+Interface for using components

@@ -1,7 +1,10 @@
 import * as React from 'react'
 import {Link} from 'react-router-dom'
 
+import {Routing} from '0-ui'
 import Router, {IRoute} from './Router'
+
+const {Route} = Routing
 
 const Navigation = () => (
   <ul>
@@ -10,17 +13,11 @@ const Navigation = () => (
   </ul>
 )
 
-const LayoutContainer = ({
-  routes,
-  routeComponent,
-}: {
-  routes: IRoute[],
-  routeComponent: (r: IRoute, i: number) => React.ReactElement<{}>,
-}): React.ReactElement<{}> => {
+const LayoutContainer = ({routes}: { routes: IRoute[]}): React.ReactElement<{}> => {
   return (
     <div className='react-layout'>
       <Navigation />
-      {routes.map((r: IRoute, i: number) => routeComponent(r, i))}
+      {routes.map((r: IRoute, i: number) => Route(r, i))}
     </div>
   )
 }
