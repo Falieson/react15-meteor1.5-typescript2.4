@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 interface IProps {
-  defaultValue: number
+  defaultValue: number | string
 }
 
 interface IState {
@@ -11,8 +11,9 @@ interface IState {
 export default class CounterComponent extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
+    const {defaultValue} = props
     this.state = {
-      value: this.props.defaultValue,
+      value: typeof(defaultValue) === 'number' ? defaultValue :  parseInt(defaultValue, 10),
     };
   }
 
@@ -28,7 +29,10 @@ export default class CounterComponent extends React.Component<IProps, IState> {
   }: {decrement?: boolean} = {}): React.ReactElement<{}> {
 
     return (
-      <button onClick={this.handleChangeValue.bind(this, decrement)}>
+      <button
+        className={`app-counter-button--${decrement ? 'decrementer' : 'incrementer'}`}
+        onClick={this.handleChangeValue.bind(this, decrement)}
+      >
         {decrement ? 'Decrease' : 'Increase'}
       </button>
     )
